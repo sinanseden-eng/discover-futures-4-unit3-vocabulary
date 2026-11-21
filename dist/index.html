@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#bfe9fc">
+  <meta name="description" content="A clue-first vocabulary lesson for Oxford Discover Futures 4, Unit 3.">
+  <title>Between the Lines | Unit 3 Word Bank</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cards.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#lesson">Skip to the lesson</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="./" class="wordmark" id="wordmark">Between the Lines</a>
+      <span class="unit">Unit 3 Vocabulary</span>
+    </div>
+  </header>
+
+  <main class="wrap lesson" id="lesson" tabindex="-1">
+    <section id="bank-view" aria-labelledby="bank-title">
+      <div class="bank-heading">
+        <div>
+          <h1 id="bank-title" tabindex="-1">Word Bank</h1>
+          <p>Choose a word card</p>
+        </div>
+        <div class="progress">
+          <p id="progress-number">0 of 20 discovered</p>
+          <progress id="progress-meter" value="0" max="20" aria-label="Words discovered"></progress>
+        </div>
+      </div>
+      <div class="groups" id="groups"></div>
+      <p class="shelf-key"><span aria-hidden="true">?</span> Word to discover</p>
+    </section>
+
+    <div id="card-view" class="card-view" hidden>
+      <div class="card-toolbar">
+        <button class="text-button" id="back-to-bank" type="button">Back to Word Bank</button>
+        <p class="card-context"><span id="card-chapter"></span><span id="card-position"></span></p>
+      </div>
+      <article class="card" id="vocabulary-card" aria-labelledby="clue-title">
+        <section id="clue-view">
+          <div class="clue-panel">
+            <h1 id="clue-title" tabindex="-1">What’s the word?</h1>
+            <p class="clue-text" id="clue-text"></p>
+          </div>
+          <form id="prediction-form">
+            <label for="prediction">Your guess <span>· Say it aloud or type it here.</span></label>
+            <input id="prediction" type="text" maxlength="80" placeholder="What do you think?" autocomplete="off" spellcheck="false">
+            <div class="clue-actions">
+              <button class="secondary" id="hint-button" type="button" aria-controls="hint-text" aria-expanded="false">Show hint</button>
+              <button class="primary" type="submit">Reveal word</button>
+            </div>
+            <p class="hint" id="hint-text" role="status" hidden></p>
+          </form>
+        </section>
+
+        <section class="answer-view" id="answer-view" aria-labelledby="answer-word" hidden>
+          <figure class="word-visual" id="word-visual" role="img"></figure>
+          <div class="answer-copy">
+            <div class="answer-heading">
+              <h1 id="answer-word" tabindex="-1"></h1>
+              <span id="word-type" class="word-type"></span>
+            </div>
+            <p id="guess-feedback" class="guess-feedback" hidden></p>
+            <dl class="answer-details">
+              <div><dt>Meaning</dt><dd id="definition"></dd></div>
+              <div><dt>Useful words &amp; phrases</dt><dd><ul id="phrases" class="phrases"></ul></dd></div>
+              <div class="example"><dt>In a sentence</dt><dd id="example"></dd></div>
+            </dl>
+            <p class="collected-status" id="collected-status"><span aria-hidden="true">✓</span> <span id="collected-message"></span></p>
+          </div>
+        </section>
+      </article>
+      <nav class="card-controls" aria-label="Browse cards">
+        <button class="secondary" type="button" id="previous">Previous card</button>
+        <button class="text-button" id="cover-word" type="button" hidden>Back to the clue</button>
+        <button class="secondary" type="button" id="next">Next card</button>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="wrap footer">
+    <span>Oxford Discover Futures 4 · Unit 3 Vocabulary</span>
+    <a href="https://quizlet.com/tr/1064242989/oxford-discover-futures-4-unit-3-flash-cards/" target="_blank" rel="noopener noreferrer">Original Quizlet set</a>
+  </footer>
+
+  <template id="visual-statistic">
+    <div class="diagram statistic-visual">
+      <div class="diagram-title">Reading survey</div>
+      <div><strong>62</strong> <span>out of 100</span></div>
+      <div class="survey-meter"><span></span></div>
+      <p>Students who chose a mystery novel</p>
+    </div>
+  </template>
+
+  <template id="visual-pie-chart">
+    <div class="diagram chart-visual">
+      <div class="diagram-title">Students’ book choices</div>
+      <div class="pie-layout">
+        <div class="pie-picture"></div>
+        <ul class="pie-key">
+          <li>Mystery <strong>62%</strong></li>
+          <li>Fantasy <strong>24%</strong></li>
+          <li>Biography <strong>14%</strong></li>
+        </ul>
+      </div>
+    </div>
+  </template>
+
+  <template id="visual-bar-graph">
+    <div class="diagram chart-visual">
+      <div class="diagram-title">Library loans</div>
+      <div class="bars">
+        <div class="bar-item bar-mystery"><strong>24</strong><span></span><small>Mystery</small></div>
+        <div class="bar-item bar-fantasy"><strong>18</strong><span></span><small>Fantasy</small></div>
+        <div class="bar-item bar-biography"><strong>12</strong><span></span><small>Biography</small></div>
+      </div>
+    </div>
+  </template>
+
+  <template id="visual-data">
+    <div class="diagram data-visual">
+      <div class="diagram-title">Reading log</div>
+      <table>
+        <thead><tr><th>Entry</th><th>Genre</th><th>Minutes</th></tr></thead>
+        <tbody>
+          <tr><td>01</td><td>Mystery</td><td>24</td></tr>
+          <tr><td>02</td><td>Fantasy</td><td>18</td></tr>
+          <tr><td>03</td><td>Biography</td><td>31</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </template>
+
+  <noscript><p class="wrap">Enable JavaScript to reveal the vocabulary cards.</p></noscript>
+</body>
+</html>
